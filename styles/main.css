@@ -1,0 +1,150 @@
+html,body{width:100%;height:100%;}
+.main-container{
+    width:100%;
+    height:100%;
+    background-color:black;
+}
+.navi-container{
+    height:30px;
+    background-color:white;
+    margin:5px;
+    border-radius:5px;
+}
+.navi-container h5{
+    margin:4px 0px 0px 10px;
+}
+.game-container{
+    height:calc(100% - 40px);
+}
+.statement{
+    height:calc(100% - 20px);
+    width:100%;
+    margin:10px 20px 10px 20px;
+    background-color:white;
+}
+.tapak{
+    border-radius:10px;
+    height:calc(20% - 5.5px);
+    width:100%;
+    margin:5px;
+    list-style-type:none;
+}
+.tapak-display{
+    border:2px solid #FFFFFF;
+    border-radius:100px 20px 70px 10px;
+    text-align:center;
+    width:calc(100% - 50px);
+    height:100%;
+    padding:0px 20px 0px 20px;
+    margin:0px;
+    float:left;
+    opacity:0.95;
+}
+.tapak-display h2{
+    font-size:2vw;
+}
+.tapak-display h5{
+    margin-top:-8px;
+    font-size:1vw;
+}
+.tapak.opportunity{
+    background-image: url('http://loremflickr.com/80/150/clock/');
+}
+.tapak.opportunity .tapak-display{
+    /* Green */
+    /*background-color:#00FA9A;*/
+    background: linear-gradient(to top, green, #00FA9A); /*Standard*/
+}
+.tapak.doodads{
+    background-image: url('http://loremflickr.com/80/150/invoice/'); 
+}
+.tapak.doodads .tapak-display{
+    /* Pink */
+    /*background-color:#DB7093;*/
+    background: linear-gradient(to top, red, #DB7093); /*Standard*/
+}
+.tapak.charity{
+    background-image: url('http://loremflickr.com/80/150/cash/'); 
+}
+.tapak.charity .tapak-display{
+    /* Dark Orange */
+    /*background-color:#CD5C5C;*/
+    background: linear-gradient(to top, orange, #CD5C5C); /*Standard*/
+}
+.tapak.pay-check{
+    background-image: url('http://loremflickr.com/80/150/sucess/'); 
+}
+.tapak.pay-check .tapak-display{
+    /* Orange */
+    /*background-color:#FF7F50;*/
+    background: linear-gradient(to top, orange, #FF7F50); /*Standard*/
+}
+.tapak.the-market{
+    background-image: url('http://loremflickr.com/80/150/stockmarket/'); 
+}
+.tapak.the-market .tapak-display{
+    /* Blue */
+    /*background-color:#6495ED;*/
+    background: linear-gradient(to top, blue, #6495ED); /*Standard*/
+}
+.tapak.baby{
+    background-image: url('http://loremflickr.com/80/150/kids/'); 
+}
+.tapak.downsized{
+    background-image: url('http://loremflickr.com/80/150/depressed/'); 
+}
+.tapak.baby .tapak-display,.tapak.downsized .tapak-display{
+    /* Purple */
+    /*background-color:#9932CC;*/
+    background: linear-gradient(to top, purple, #9932CC); /*Standard*/
+}
+
+/* The starting CSS styles for the enter animation */
+.tapak.ng-enter {
+    transition:0.2s linear all;
+    height:0px;
+    opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.tapak.ng-enter.ng-enter-active {
+    height:calc(20% - 5.5px);
+    opacity:1;
+}
+
+/* now the element will fade out before it is removed from the DOM */
+.tapak.ng-leave {
+    transition:0.2s linear all;
+    opacity:1;
+}
+.tapak.ng-leave.ng-leave-active {
+    height:0px;
+    opacity:0;
+}
+.dice{
+    background-color:white;
+    height:80px;
+    width:80px;
+    border-radius:15px;
+    border:2px solid #808080; /* gray */
+    margin:5px;
+    float:right;
+    text-align:center;
+}
+.player-chip{
+    float:left;
+    background-color:black;
+    height:50px;
+    width:50px;
+    border-radius:25px 25px 25px 0px;
+    transform:rotate(30deg);
+    border:2px solid white;
+    opacity:0.8;
+    text-align:center;
+}
+.player-chip h5{
+    padding:5px 5px 0px 0px;
+    color:white;
+    transform:rotate(-30deg);
+}
+.cards{}

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Cash Flow Game</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="styles/main.css" type="text/css" />
+    
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+    <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>-->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.2/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/factories/dice1.js"></script>
+    <script type="text/javascript" src="scripts/factories/dice2.js"></script>
+</head>
+<body ng-app='mycashflowgame' ng-controller='cashflowgame'>
+    <!-- Main container of the board game -->
+    <div class="container main-container">
+        <!-- I think we should have a navigation in the main game container, floating, looks nice in flow of the game -->
+        <div class="row navi-container">
+            <h5>Player: <input type="text" ng-model='player.name' placeholder='Your Name'/></h5>
+        </div>
+        
+        <!-- This is where rest of the game should be -->
+        <div class="row game-container">
+            
+            <!-- Cash Flow statment -->
+            <div class="col-sm-5" style='height:100%;'>
+                <div class="statement"></div>
+            </div>
+            
+            <!-- The board game's tapak -->
+            <div class="col-sm-5" style='height:100%;'>
+                <ul style='height:85%;max-height:85%;padding-top:2%;'>
+                    <li ng-repeat='gt in gameTapakInView' class="tapak {{ gt.type }}">
+                        <div class='tapak-display'>
+                            <h2>{{ gt.text }}</h2>
+                            <h5>{{ gt.subText }}</h5>
+                        </div>
+                        <div class='player-chip' ng-show='gt.players[0]?true:false'>
+                            <h5>{{ gt.players[0].name | limitTo:5 }}</h5>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- The board game's dice -->
+            <div class="col-sm-2" style='height:100%;'>
+                <div class="dice" ng-click="moveDice1()">
+                    <h1>{{ dice1 }}</h1>
+                </div>
+                <div class="dice" ng-click="moveDice2()">
+                    <h1>{{ dice2 }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
