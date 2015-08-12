@@ -1,14 +1,22 @@
 'use strict';
 angular.module('app')
-    .controller('cashflowgame', ['$scope','$interval','dice1','dice2','thisPlayer','thisStatement','ngAudio',
-                                function($scope,$interval,dice1,dice2,thisplayer,thisStatement,ngAudio){
+    .controller('cashflowgame', ['$scope','$interval','dice1','dice2','thisPlayer','thisStatement','thisProfession','ngAudio',
+                                function($scope,$interval,dice1,dice2,thisplayer,thisStatement,thisProfession,ngAudio){
         // var backgroundMusic = ngAudio.load('audio/261830__setuniman__never-mind-1l23.mp3');
         // backgroundMusic.volume = 0.8;
         // backgroundMusic.loop = true;
         // backgroundMusic.play();
         
-        $scope.player    = thisplayer;
-        $scope.statement = thisStatement;
+        $scope.player     = thisplayer;
+        $scope.statement  = thisStatement;
+        for(var i in thisProfession){
+            $scope.statement[i] = thisProfession[i];
+        }
+        
+        $scope.updateTest = function(){
+            $scope.statement.numberOfChildren += 1;
+            $scope.statement.monthly_expenses.child[0].value = $scope.statement.numberOfChildren * $scope.statement.expensesPerChild;
+        };
         
         var gameTapaks = [{
             id      : 0,

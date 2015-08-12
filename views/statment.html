@@ -75,7 +75,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-7 statement-item">Monthly Cash Flow</div>
-                <div class="col-sm-5 statement-currency">4000.00</div>
+                <div class="col-sm-5 statement-currency">{{ statement.monthlyCashFlow() | currency:"":0 }}</div>
             </div>
         </div>
     </div>
@@ -85,8 +85,8 @@
         <div class="col-sm-6" style='height:100%'>
             <h3 class='statement-title'>Assets</h3>
             <div class="row">
-                <div class="col-sm-7 statement-item">Cash In Hand</div>
-                <div class="col-sm-5 statement-currency">{{ statement.assets.cash[0].value | currency:"":0 }}</div>
+                <div class="col-sm-5 statement-item">Cash</div>
+                <div class="col-sm-7 statement-currency">{{ statement.assets.cash[0].value | currency:"":0 }}</div>
             </div>
             <div class="row" ng-if='statement.assets.paperAsset.length > 0'>
                 <div class="col-sm-5 statement-item" style='text-decoration:underline;'>Paper</div>

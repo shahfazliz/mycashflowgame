@@ -22,7 +22,7 @@
     <script type="text/javascript" src="scripts/controllers/cashflowgame.js"></script>
     <script type="text/javascript" src="scripts/services/player.js"></script>
     <script type="text/javascript" src="scripts/services/statement.js"></script>
-    <script type="text/javascript" src="scripts/services/profession.js"></script>
+    <script type="text/javascript" src="scripts/factories/profession.js"></script>
     <script type="text/javascript" src="scripts/factories/dice1.js"></script>
     <script type="text/javascript" src="scripts/factories/dice2.js"></script>
 </head>
@@ -31,7 +31,10 @@
     <div class="container main-container">
         <!-- I think we should have a navigation in the main game container, floating, looks nice in flow of the game -->
         <div class="row navi-container">
-            <h5>Player: <input type="text" ng-model='player.name' placeholder='Your Name'/></h5>
+            <h5>
+                Player: <input type="text" ng-model='player.name' placeholder='Your Name'/>
+                Profession: {{ statement.name }}
+            </h5>
         </div>
         
         <!-- This is where rest of the game should be -->
