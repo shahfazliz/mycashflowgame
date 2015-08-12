@@ -1,0 +1,10 @@
+.dice{
+    background-color:white;
+    height:80px;
+    width:80px;
+    border-radius:15px;
+    border:2px solid #808080; /* grey */
+    margin:5px;
+    float:right;
+    text-align:center;
+}

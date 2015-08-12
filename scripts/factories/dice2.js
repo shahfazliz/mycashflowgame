@@ -4,7 +4,7 @@
     version: 1.1
     last updated: 09/08/2015
 */
-angular.module('mycashflowgame')
+angular.module('app')
     .factory('dice2', function(){
         var thisFactory = {};
         var min = 1;

@@ -1,0 +1,11 @@
+<ul style='height:85%;max-height:85%;margin-top:-5%;transform:rotateX(30deg);'>
+    <li ng-repeat='gt in gameTapakInView' class="tapak {{ gt.type }}">
+        <div class='tapak-display'>
+            <h2>{{ gt.text }}</h2>
+            <h5>{{ gt.subText }}</h5>
+        </div>
+        <div class='player-chip' ng-show='gt.players[0]?true:false'>
+            <h5>{{ gt.players[0].name | limitTo:5 }}</h5>
+        </div>
+    </li>
+</ul>

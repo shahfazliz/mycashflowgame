@@ -1,0 +1,17 @@
+.player-chip{
+    margin-left:-10px;
+    float:left;
+    background-color:black;
+    height:50px;
+    width:50px;
+    border-radius:25px 25px 25px 0px;
+    transform:rotate(30deg);
+    border:2px solid white;
+    opacity:0.8;
+    text-align:center;
+}
+.player-chip h5{
+    padding:5px 5px 0px 0px;
+    color:white;
+    transform:rotate(-30deg);
+}

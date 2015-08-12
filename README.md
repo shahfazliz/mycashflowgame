@@ -1,26 +1,18 @@
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+# My Cash Flow Game
+Game yang aku sendiri customized based on Robert Kiosaki's Cash Flow Game 101.
+Masaalah yang timbul selalu nak kena setup board game tu dah makan masa, then
+buang masa nak calculate result statements, asyik kena rely kat calculator,
+nak update statement is to padam dengan pemadam, pastu kena tulis balik ngan pensel.
+Game ni untuk private use aku, bukan untuk jual.
 
+## Tujuan Utama
+Main game bukan tujuan utama. Tapi once dah siap, tujuan utama dah complete, syok
+gak dapat main game. So tujuan asal:
+1. Test sejauh mana ngAnimate dari Angular.js compared to jQuery.js
+2. Test Socket.io dalam implementing multiplayer option
+3. Test ngAudio
+4. Test custom directives
 
-Hi there! Welcome to Cloud9 IDE!
-
-To get you started, we included a small hello world application.
-
-1) Open the hello-world.html file
-
-2) Click on the Preview button to open a live preview pane
-
-3) Make some changes to the file, save, watch the preview, and have fun!
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for documentation, or http://support.c9.io for support.
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+## Untuk reference aku
+Demo link: https://mycashflowgame-shahfazliz.c9.io/
+Nak edit: https://ide.c9.io/shahfazliz/mycashflowgame/

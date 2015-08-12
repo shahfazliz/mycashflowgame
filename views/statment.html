@@ -1,0 +1,139 @@
+<div class="statement">
+    <div class="row" style='height:60%'>
+        
+        <!-- Income Statement -->
+        <div class="col-sm-6" style='height:100%'>
+            <div class="row" style='height:40%'>
+                <div class="col-sm-12">
+                    
+                    <h3 class='statement-title'>Monthly Income</h3>
+                    <div class="row" ng-repeat="(key, values) in statement.monthly_income">
+                        <div ng-if='values.length == 1'>
+                            <div class="col-sm-5 statement-item">{{ key }}</div>
+                            <div class="col-sm-7 statement-currency">{{ values[0].value | currency:"":0 }}</div>
+                        </div>
+                        <div ng-if='values.length > 1'>
+                            <div class="row" style='margin:0px;'><div class="col-sm-12 statement-item" style='text-decoration:underline;'>{{ key }}</div></div>
+                            <div class="row" style='margin:0px;' ng-repeat='(i,j) in values'>
+                                <div class="col-sm-5 statement-item" style='padding-left:10%;'>{{ values[i].item }}</div>
+                                <div class="col-sm-7 statement-currency">{{ values[i].value | currency:"":0 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="row" style='height:60%'>
+                <div class="col-sm-12">
+                    
+                    <h3 class='statement-title'>Monthly Expenses</h3>
+                    <div class="row" ng-repeat="(key, values) in statement.monthly_expenses">
+                        <div ng-if='values.length == 1'>
+                            <div class="col-sm-5 statement-item">{{ key }}</div>
+                            <div class="col-sm-7 statement-currency">{{ values[0].value | currency:"":0 }}</div>
+                        </div>
+                        <div ng-if='values.length > 1'>
+                            <div class="row" style='margin:0px;'><div class="col-sm-12 statement-item" style='text-decoration:underline;'>{{ key }}</div></div>
+                            <div class="row" style='margin:0px;' ng-repeat='(i,j) in values'>
+                                <div class="col-sm-5 statement-item" style='padding-left:10%;'>{{ values[i].item }}</div>
+                                <div class="col-sm-7 statement-currency">{{ values[i].value | currency:"":0 }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!-- Summary -->
+        <div class="col-sm-6" style='height:100%'>
+            <h3 class='statement-title'>Summary</h3>
+            <div class="row">
+                <div class="col-sm-7 statement-item">Passive Income</div>
+                <div class="col-sm-5 statement-currency">{{ statement.passiveIncome() | currency:"":0 }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-7 statement-item">Total Income</div>
+                <div class="col-sm-5 statement-currency">{{ statement.totalIncome() | currency:"":0 }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" style='margin:10px;width:90%;border:1px solid black;background-color:gray;'>
+                    <div class="row">
+                        <div class="col-sm-7 statement-item">No. of Children</div>
+                        <div class="col-sm-5 statement-number">{{ statement.numberOfChildren }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-7 statement-item">Expenses/Child</div>
+                        <div class="col-sm-5 statement-currency">{{ statement.expensesPerChild }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-7 statement-item">Total Expenses</div>
+                <div class="col-sm-5 statement-currency">{{ statement.totalExpenses() | currency:"":0 }}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-7 statement-item">Monthly Cash Flow</div>
+                <div class="col-sm-5 statement-currency">4000.00</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Balance Sheet -->
+    <div class="row" style='height:40%'>
+        <div class="col-sm-6" style='height:100%'>
+            <h3 class='statement-title'>Assets</h3>
+            <div class="row">
+                <div class="col-sm-7 statement-item">Cash In Hand</div>
+                <div class="col-sm-5 statement-currency">{{ statement.assets.cash[0].value | currency:"":0 }}</div>
+            </div>
+            <div class="row" ng-if='statement.assets.paperAsset.length > 0'>
+                <div class="col-sm-5 statement-item" style='text-decoration:underline;'>Paper</div>
+                <div class="col-sm-3 statement-item" style='text-decoration:underline;text-align:right;'>Units</div>
+                <div class="col-sm-4 statement-item" style='text-decoration:underline;text-align:right;'>Cost</div>
+                <div class='row' style='margin:0px;' ng-repeat='value in statement.assets.paperAsset'>
+                    <div class="col-sm-5 statement-item" style='padding-left:10%;'>{{ value.item }}</div>
+                    <div class="col-sm-3 statement-currency">{{ value.units }}</div>
+                    <div class="col-sm-4 statement-currency">{{ value.cost | currency:"":0 }}</div>
+                </div>
+            </div>
+            <div class="row" ng-if='statement.assets.rEstate.length > 0'>
+                <div class="col-sm-5 statement-item" style='text-decoration:underline;'>RE</div>
+                <div class="col-sm-3 statement-item" style='text-decoration:underline;text-align:right;'>Down</div>
+                <div class="col-sm-4 statement-item" style='text-decoration:underline;text-align:right;'>Cost</div>
+                <div class='row' style='margin:0px;' ng-repeat='value in statement.assets.rEstate'>
+                    <div class="col-sm-5 statement-item" style='padding-left:10%;'>{{ value.item }}</div>
+                    <div class="col-sm-3 statement-currency">{{ value.downpayment | currency:"":0 }}</div>
+                    <div class="col-sm-4 statement-currency">{{ value.cost | currency:"":0 }}</div>
+                </div>
+            </div>
+            <div class="row" ng-if='statement.assets.business.length > 0'>
+                <div class="col-sm-5 statement-item" style='text-decoration:underline;'>Business</div>
+                <div class="col-sm-3 statement-item" style='text-decoration:underline;text-align:right;'>Down</div>
+                <div class="col-sm-4 statement-item" style='text-decoration:underline;text-align:right;'>Cost</div>
+                <div class='row' style='margin:0px;' ng-repeat='value in statement.assets.business'>
+                    <div class="col-sm-5 statement-item" style='padding-left:10%;'>{{ value.item }}</div>
+                    <div class="col-sm-3 statement-currency">{{ value.downpayment | currency:"":0 }}</div>
+                    <div class="col-sm-4 statement-currency">{{ value.cost | currency:"":0 }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6" style='height:100%'>
+            <h3 class='statement-title'>Liabilities</h3>
+            <div class="row" ng-repeat="(key, values) in statement.liabilities">
+                <div ng-if='values.length == 1'>
+                    <div class="col-sm-5 statement-item">{{ key }}</div>
+                    <div class="col-sm-7 statement-currency">{{ values[0].value | currency:"":0 }}</div>
+                </div>
+                <div ng-if='values.length > 1'>
+                    <div class="row" style='margin:0px;'><div class="col-sm-12 statement-item" style='text-decoration:underline;'>{{ key }}</div></div>
+                    <div class="row" style='margin:0px;' ng-repeat='(i,j) in values'>
+                        <div class="col-sm-5 statement-item" style='padding-left:10%;'>{{ values[i].item }}</div>
+                        <div class="col-sm-7 statement-currency">{{ values[i].value | currency:"":0 }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
